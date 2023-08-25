@@ -1,13 +1,14 @@
 require('dotenv').config()
 const express = require('express')
 const app = express()
-const mysql = require('mysql')
+// const mysql = require('mysql')
+const { Pool } = require('pg');
 const cors = require('cors')
 app.use(express.json())
 app.use(cors())
 const url = 3001  
 
-const db = mysql.createPool({
+const db = new Pool({
 
     host: process.env.HOST,
     user: process.env.USER,
