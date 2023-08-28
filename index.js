@@ -8,13 +8,17 @@ app.use(express.json())
 app.use(cors())
 const url = 3001  
 
+const connectionString = "postgres://default:dCpb4n5ohxDI@ep-old-cell-84601773.us-east-1.postgres.vercel-storage.com:5432/verceldb";
+
 const db = new Pool({
 
-    host: process.env.HOST,
-    user: process.env.USER,
-    password: process.env.PASSWORD,
-    database: process.env.DATABASE,
-    port: process.env.PORT,
+    connectionString: connectionString,
+
+    // host: process.env.HOST,
+    // user: process.env.USER,
+    // password: process.env.PASSWORD,
+    // database: process.env.DATABASE,
+    // port: process.env.PORT,
     
 });
 
